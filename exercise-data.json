@@ -1,0 +1,18 @@
+[
+    {
+      "_id": "5a68fdc3615eda645bc6bdec",
+      "name": "Customer 1",
+      "isGold": false,
+      "phone": 12345678,
+      "__v": 0
+    },
+    {
+      "_id": "5a68fdd7bee8ea64649c2777",
+      "name": "Customer 2",
+      "isGold": false,
+      "phone": 8765432,
+      "__v": 0
+    }
+    
+]
+  
