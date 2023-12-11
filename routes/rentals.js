@@ -10,8 +10,8 @@ const router = express.Router();
 Fawn.init(mongoose);
 
 router.get('/', auth, async (req, res) => {
-    const rentals = await Rental.find().sort('-dateOut');
-    res.send(rentals);
+  const rentals = await Rental.find().sort('-dateOut');
+  res.send(rentals);
 });
 
 router.post('/', auth, async (req, res) => {
