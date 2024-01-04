@@ -1,27 +1,14 @@
-require('express-async-errors');
-const config = require('config');
-const Joi = require('joi')
-Joi.objectId = require('joi-objectid')(Joi);
+const winston = require('winston');
 const express = require('express');
-
 const app = express();
 
+require('./startup/logging')
 require('./startup/routes')(app)
 require('./startup/db')();
-
-
-
-
-
-
-if (!config.get('jwtPrivateKey')) {
-  console.error("FATAL ERROR: jwtPrivateKey is not defined!");
-  process.exit(1);
-}
-
-
+require('./startup/config')()
+require('./startup/validation')()
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log(`listening on port ${port}...`)
+  winston.info(`listening on port ${port}...`)
 });
